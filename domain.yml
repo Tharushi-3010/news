@@ -1,0 +1,30 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - get_news
+  - out_of_scope
+
+entities:
+  - company
+
+slots:
+  company:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: company
+
+
+responses:
+  utter_greet:
+    - text: "Hello! Which company do you want news about?"
+  utter_goodbye:
+    - text: "Goodbye!"
+  utter_iamabot:
+    - text: "I am a smart news chatbot built to find the latest updates about companies."
+  
+
+actions:
+  - action_get_news
